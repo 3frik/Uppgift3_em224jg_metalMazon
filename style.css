@@ -1,7 +1,8 @@
 :root{
     --bgcolor: white;
-    --menuBgColor: rgb(76, 147, 212);
+    --menuBgColor: rgb(85, 129, 170);
     --menuBgContrastColor: rgb(21, 74, 124);
+    --menuBgContrastColorExtreme: rgb(190, 6, 68);
     --bgcolor2: rgb(119, 189, 255);
     --menuBgColor2: rgb(119, 189, 255);
     --menuBgContrastColor2: rgb(119, 189, 255);
@@ -40,7 +41,7 @@ body{
         padding-top:var(--paddingSmall);
         padding-bottom: var(--paddingSmall);
     }
-
+    
     a{
         text-decoration: none;
         color:var(--textColor);
@@ -53,22 +54,59 @@ body{
             background-color: var(--textColor);    
         }
     }
-
+    
     section.mainGame:nth-child(odd){
         --bgcolor: var(--bgcolorEven);
         background-color: var(--bgcolor);
         --menuBgColor : var(--menuBgColorEven);
         --menuBgContrastColor:var(--menuBgContrastColorEven);
     }
-
+    
     p{
         padding-top: 15px;
         padding-bottom: 15px;
     }
-
+    
     *{
         box-sizing: border-box; 
         /* Note to me: This includes padding in width. Otherwise, padding adds to width. Why is not this as default? */
+    }
+
+    .telephoneSpam{
+        background-color: var(--menuBgContrastColorExtreme);
+        color:var(--textColor2);
+        border-radius: 120px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap:15px;
+        padding:5px;
+        font-size: large;
+        max-width: 200px;
+        
+        img{
+            width:15%;
+            height:auto;
+        }
+    }
+
+    .urgent{
+        background-color: var(--menuBgContrastColorExtreme);
+    }
+}
+
+/*MOBILE UPPER AREA (to cover camera) AND NAVIGATION TOOLS*/
+#mobileLogoArea{
+    height:3vh;
+    position:sticky;
+    top:0;
+    width:100%;
+    background-color: black; 
+}
+@media only screen and (min-width:700px) {
+    #mobileLogoArea{
+        display:none;
     }
 }
 
@@ -79,124 +117,118 @@ header{
     align-items: center;
     background-color: var(--menuBgColor);
     width: 100%;
+    max-height: 120px;
     padding:var(--paddingBig);
+    position:fixed;
+    bottom:0; 
+    top:auto;
 
-    #faceContainer{
-        background-image: url("sources/strokes.png");
-        padding:var(--paddingBig);
-    }
-
-    .horizontalContainer{
+    #orientationDiv{
         display:flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
+        justify-content: space-between;
         align-items: center;
-        gap:2vw;
+        gap:30px;
     }
 
-    .headerPicture{
+    #MMLogo{
         width:15vw;
         max-width: var(--maxSize);
-        height:15vw;
-        max-height: var(--maxSize);
-        border-radius: 50%;
-    }
-
-    nav{
-        display:flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        #hamburguerIcon{
-            display:none;
-        }
-
-        #navMenu{    
-            display:flex;
-            justify-content: space-between;
-            align-items: end;
-            gap:10px;
-            position:relative;
-            list-style: none;
-        }
-        
-        /* Submenus pop up when their title is hovered */
-        .submenu{
-            display:none;
-            position:absolute;
-            background-color: var(--menuBgColor);
-            transform: translateY(3rem);
-            /*border:1px solid var(--textColor);
-*/
-            li{
-                font-size: small;
-            }
-        }
-        
-        #navMenu :hover .submenu{
-            display:block;
-        }
-
     }
     
-    @media only screen and (max-width: 600px){
-        h3{
+    nav{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 8vh;
+        
+        #navMenu{
             display:none;
+            flex-direction: column;
+            position: absolute;
+            background-color: var(--menuBgColor);
+            bottom:0;
+            right:0;
+        }
+        
+        #hamburguerIcon{
+            display:block;
+            max-height: 50px;
+        }
+        
+        .submenu{
+            display:block;
+            position:absolute;
+            transform: none;
+        }
+        
+        /* When tapping on the hamburguer icon the options appear */
+        &:hover #navMenu{
+            display:block;
+        }   
+    }
+}
+/*For Webb*/
+@media (min-width:700px){
+    header{
+        position:sticky;
+        top:0;
+        bottom:auto;
+        
+        #orientationDiv{
+            flex-direction: row;
         }
 
         nav{
-            /* The hamburguer menu, and not the options, is visible */
-            #navMenu{
-                flex-direction: column;
-                display:none;
-                position: absolute;
-                background-color: var(--menuBgColor);
-                border: 1px solid var(--menuBgContrastColor)
-            }
 
             #hamburguerIcon{
-                display:block;
+                display:none;
             }
-
-            .submenu{
-                display:block;
+            
+            #navMenu{    
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: end;
+                gap:10px;
                 position:relative;
-                transform: none;
+                list-style: none;
             }
-
-            /* When tapping on the hamburguer icon the options appear */
-            /* Note for me: while nesting, just ":hover" is an item inside that is being hovered, while "&:hover" is the same element being hovered */
+            
             &:hover #navMenu{
-                display:block;
-                right:0;
+                display:flex;
             }
         }
     }
 }
 
-    #technicsArea{
-        display: flex;
-        flex-direction: row;
-        scrollbar-width:thin;
-        overflow-y: auto;
-        width: 100%;
-        height: auto;
+/*MAIN CONTENT AREA (and whitespaces around in webb version)*/
+#contentArea{
+    display: grid;
+    grid-template-columns: 0fr 2fr 0fr;
 
-        div{
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            width: 20vw;
-            min-width: 200px;
-            /*border: 1px solid var(--menuBgContrastColor);*/
-            background-color: var(--menuBgColor);
-            margin: 3px;
- 
-            img{
-                max-width: 80%;
-            }
-        }
-
+    .whitespaceArea{
+        display:none;
+        flex-direction: column;
+        justify-content:end;
+        padding:30px;
+        height:80vh;
     }
+}
+#content {
+    background-color: blueviolet;
+    width:100%;
+    height:100vh;
+}
+@media (min-width:700px){
+    #contentArea{
+        grid-template-columns: 1fr 2fr 1fr;
+
+        .whitespaceArea{
+            display:block;
+        }
+    }
+}
 
 .mainGame{
     padding:10vw;
@@ -301,7 +333,7 @@ header{
 footer{
     background-color: var(--menuBgColor);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding:var(--paddingBig);
 }
