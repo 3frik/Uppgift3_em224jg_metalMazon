@@ -94,20 +94,22 @@
                 <li>Telefonnummer föredras som kontaktmiljö och betonas i strukturen och visuellt design. De visas minst två gånger per sida.</li>
                 <li>En startsida med kort information om bolaget, karta, adress och öppetider.</li>
                 <li>En sida "om oss" med information och bilder av personalen, och bilder av företaget</li>
-                <li>"Om oss" sida ingår de 20 erfarenhet i branschen</li>
+                <li>"Om oss" sida ingår de 20 år erfarenhet i branschen</li>
                 <li>En sida "Akut smedarbetare" betonat i navigerings menyerna</li>
                 <li>"Akut smedarbetare" sida ingår telefonnummer i minst fyra platser</li>
                 <li>"Akut smedarbetare" sida använder telefonnummer som break element</li>
-                <li>"Akut smedarbetare" sida ingår en karta merd bolagets position</li>
+                <li>"Akut smedarbetare" sida ingår en karta med bolagets position</li>
                 <li>En sida "produkter och tjänster" med information om produkter (se upp) och kontaktformulär (se i funktionskrav)</li>
+                <li>En sida "våra kunder" där kunder kan posta och kommentera sina upplevelse med företaget.</li>
             </ul>
             <h3>Funktion</h3>
             <!-- Skriv korta konkreta och mätbara krav som beskriver VAD användaren ska kunna göra. -->
             <ul>
                 <li>En förmulär där man väljer en produkt, lägger in mått, kanske lokalisation, och man får ett pris för tjänsten</li>
-                <li>I startsidan en extra länk till "akut smedarbetare" som man kommer ditekt till, utan vidare click på manyer</li>
+                <li>I startsidan en extra länk till "akut smedarbetare" som man kommer ditekt till, utan vidare click på menyer</li>
                 <li>En blankett för att kontakta via inre mail som ingår beställarens namn eller företag, adress, beskrivning av ärenden och föredrat kontaktmetod med fälte för telefonnummer eller mailadress</li>
                 <li>Bilder i information om produkter (se innehållskrav) ska kunna förstoras genom hovering</li>
+                <li>En formulär för att kommentera och bedöma arbetet från kunderna</li>
             </ul>
         </section>
 
@@ -116,13 +118,73 @@
             <!-- Beskriv hur du arbetat med uppgiften. -->
             <p>Garrets modell första steg, strategier, ska jag läsa om...</p>
 
-            <p>För att hjälpa deffiniera målgruppen noggran och på enh så verklignära sätt, en intervju genomfördes med de två senaste anställda i bolaget. Intervjun skedde på spanska, och därför transkriveras inte den i sin helhet.</p>            
+            <p>För att hjälpa deffiniera målgruppen noggran och på en så verklignära sätt som möjligt, en intervju genomfördes med de två senaste anställda i bolaget. Intervjun skedde på spanska, och därför transkriveras inte den i sin helhet.</p>            
             <p>En sammanfattning av den skulle ingå den typ av kund somd elas i två grupper: 1. prvata människor, som funderar på att installera en stängsel eller grind i sitt färdigt byggt hus; och 2. Konstruktionsföretag som vill ha dessa varor i deras stora byggprojekt. Individer som kunder brukar också leta efter reparation och underhållningstjänster, ibland av akut karaktär.</p>
         
+            <h3>Existerande Webbsidor</h3>
             <p>Innan kravspecifikationen deffinieras en analys av existerande webbsidor ska genomföras.</p>
             <p>Ett fåtal webbsidor om låssmedsarbetartjänst och installation av stängsel från Alicante områden i Spanien har besökts. Utifrån den analys har fötydligats eller lagts några krav.</p>
             <!-- Det är viktigt att du beskriver hur du använt Garretts modell och tar med referenser med sidnummer till boken, för att styrka det du tar upp i din text. Se mer info i rutan om referenser på uppgiftens webbsida. -->
-            <p>...</p>
+            <p>De webbsidor refereras till i källförtekning. I dem har det märkts:</p>
+            <ul>
+                <li>Alla dem ingår en telefonnummer i navbar, i fyra av dem är nuymmret betonat.</li>
+                <li>Fyra av dem ingår öppetiden i navbar.</li>
+                <li>Alla har en fixerad kontaktlänk (telefonnummer eller wassup)</li>
+                <li>Endast tre av dem verkar vara resposiva mot mobilenheter</li>
+                <li>De två för akut smedjearbete ingår mycket text, åtminstone en gång i form av punktlista med tjänster. Inte många bilder.</li>
+                <li>De som säljer produkter ingår bilder av dess produkter.</li>
+                <li>Guardiola och Mondejar ingår hjälpmedel för navigering i form av en sticky navbar.</li>
+                <li>Alla betonar dess lång erfarenhet i yrtket</li>
+                <li>Ingen form av lojaltetsbelöning. Ingen användarkonto.</li>
+                <li>Ingen form av feedback från användare visas (commentärer eller recensioner).</li>
+            </ul>
+            <p>Mondejar verkar vara den mest avancerade webbsidan, med en responsiv mobilversion och animationer knutna till scrollingen.</p>
+            <p>Det verkar finnas en bra del av saker man kan göra för att skapa en mer attraktiv webbsida jämfört med de nuvarande existerande. Som till exempel:</p>
+            <ul>
+                <li>Anpassning av en mobil version av sidan.</li>
+                <li>Anpassning av bilder.</li>
+                <li>Möjlighet att skapa konto. Även om de som använder tjänsterna inte gör det regelbundet.</li>
+                <li>Möjlighet att lämna feedback och läsa den frånm andra. Man ka ta inspiration av andra webbshops.</li>
+            </ul>
+            <p>Några av de tankar har implementerats i kravlistan a posteriori.</p>
+            <p>Designen kommer därför att prioritera en mobilversion av sidan, där allt viktig finns tillgänglig till tummen, och därför mobilens design kommer att variera mycket från nuvarandes webbsidor mobilstruktur, som speglar en webbsidans. Vi kommer att använda en annan "conceptual model", som Garrett skriver (Garret, s.85, s.111-112)</p>
+            
+            <h3>The Structure and the Skeleton Planes</h3>
+            <p>Vi har deffinierat webbplatsens innehåll. I denna steg deffinierar vi hur de element kommer att presenteras och hur kommer användaren att navigera från visa till andra, vid sidan av navbar som kommer att erbjuda navigering till hela webbsidan</p>
+            <p>Navigationen i webbsidan kommer att vara mest Hierarkisk (Garret, s.93), fast med litet vertikal kommunikation till akut tjänst och kontaktformulär.</p>
+            <p>Platsen kommer att ha de följande sidor, inspirerade i stor grad från Mondejar och Guardiola:</p>
+            <ul>
+                <li><h4>Startsida</h4> 
+                    <p>Innehåller information om företaget, sammanfattar produkter och tjänster. kort information om bolaget, karta, adress och öppetider</p>
+                    <p>Navigerar till KAtalog, Akut tjänst, Kontakt, Om oss och Våra kunder</p></li>
+                <li><h4>Katalog</h4>
+                    <p>Innehåller information om produkter: galler, stängsel, jalusier, grindar; och tjänster: reparation, underhållning och akut tjänstgöring</p>
+                    <p>Navigerar till Kontakt, akut tjänst, och till varje produkts information</p></li>
+                <li><h4>Akut tjänst</h4>
+                    <p>Innehåller en enkel och snabb kontaktformulär, telefonnummer i olika platser</p>
+                    <p>Formulären ingår en opbligatorisk telefon nummer och frivilliga kundens namn och beskrivning av arendet. Företaget lovar ta snabbt kontakt med kunden.</p>
+                    <p>Navigerar till kontakt</p>
+                </li>
+                <li><h4>Kontakt</h4>
+                    <p>Innehåller telefonnummer och en stor kontaktformulär</p>
+                    <p>Formuläret ingår kundens namn, beskrivning av ärendet, telefonnummer, adress eller området, frivilligt företag</p>
+                    <p>Inte navigerar någonstans</p>
+                </li>
+                <li><h4>Om oss</h4>
+                    <p>information och bilder av personalen, och bilder av företaget. Ingår de 20 år erfarenhet i branschen</p>
+                    <p>Inte vaigerar någonstans</p>
+                </li>
+                <li><h4>Våra kunder</h4>
+                    <p>Innehåller bilder från kunder, med kommentarer och rating från själva kunder. Ingår en formulär för att publicera.</p>
+                    <p>Formuläret ingår en knapp för att ladda upp en bild, lägg en kommentär, en recension, nickname och ärendenummer (som kommer i fakturan)</p>
+                    <p>Inte navigerar någonstans</p>
+                </li>
+                <li><h4>Produktinformation</h4>
+                    <p>Ingår Bilder och information i detalj av produkter. Ingår en formulär för att beräkna en informativ pris.</p>
+                    <p>Formuläret ingår storlek av produkten, adress, och ett val av olika varianter där det gäller</p>
+                    <p>Inte navigerar någonstans</p>
+                </li>
+            </ul>
         </section>
 
         <section>
@@ -143,6 +205,7 @@
             <h2>5. Utvärdering mot kravspecifikationen</h2>
             <!-- Kopiera din kravspecifikation hit. Efter varje punkt lägger du till en kort mening som motiverar hur kravet är uppfyllt eller motiverar varför det inte är uppfyllt. -->
         </section>
+        
         <section>
             <h2>6. Användartest</h2>
             <h3>- med metoden "Tänka högt" (Thinking Out Loud)</h3>
@@ -150,6 +213,7 @@
             <!-- Beskriv hur du genomförde användartestet. Ange vilka brister du upptäckte och hur du åtgärdat dem. -->
             <p>...</p>
         </section>
+
         <section>
             <h2>Källförteckning</h2>
             <!-- Skriv en källförteckning enligt Harvardsystemet för de källor du refererat till i din text. Det ska åtminstone vara Garretts bok. -->

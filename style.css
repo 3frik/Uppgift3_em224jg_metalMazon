@@ -1,0 +1,307 @@
+:root{
+    --bgcolor: white;
+    --menuBgColor: rgb(76, 147, 212);
+    --menuBgContrastColor: rgb(21, 74, 124);
+    --bgcolor2: rgb(119, 189, 255);
+    --menuBgColor2: rgb(119, 189, 255);
+    --menuBgContrastColor2: rgb(119, 189, 255);
+    --textColor: black;
+    --textColor2: white;
+    --maxSize:120px;
+    --paddingBig: 30px;
+    --paddingSmall:10px;
+
+    @media only screen and (max-width:600px){
+        --paddingBig:15px;
+        --paddingSmall:5px;
+    }
+}
+
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--bgcolor);
+    color:var(--textColor);
+    padding:0;
+    margin:0;
+
+    h1, h2, h3, h4 ,p{
+        margin: 0;
+        margin-left:var(--paddingBig);
+        margin-right:var(--paddingBig);
+    }
+
+    li{
+        list-style: none;
+        display:flex;
+        flex-direction:column;
+        align-items: end;
+        margin:0;
+        padding:0;
+        padding-top:var(--paddingSmall);
+        padding-bottom: var(--paddingSmall);
+    }
+
+    a{
+        text-decoration: none;
+        color:var(--textColor);
+        padding: var(--paddingSmall);
+        display:block;
+        transition: color 0.2s, background-color 0.2s;
+
+        &:hover{
+            color:var(--bgcolor);
+            background-color: var(--textColor);    
+        }
+    }
+
+    section.mainGame:nth-child(odd){
+        --bgcolor: var(--bgcolorEven);
+        background-color: var(--bgcolor);
+        --menuBgColor : var(--menuBgColorEven);
+        --menuBgContrastColor:var(--menuBgContrastColorEven);
+    }
+
+    p{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    *{
+        box-sizing: border-box; 
+        /* Note to me: This includes padding in width. Otherwise, padding adds to width. Why is not this as default? */
+    }
+}
+
+header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--menuBgColor);
+    width: 100%;
+    padding:var(--paddingBig);
+
+    #faceContainer{
+        background-image: url("sources/strokes.png");
+        padding:var(--paddingBig);
+    }
+
+    .horizontalContainer{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        gap:2vw;
+    }
+
+    .headerPicture{
+        width:15vw;
+        max-width: var(--maxSize);
+        height:15vw;
+        max-height: var(--maxSize);
+        border-radius: 50%;
+    }
+
+    nav{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        #hamburguerIcon{
+            display:none;
+        }
+
+        #navMenu{    
+            display:flex;
+            justify-content: space-between;
+            align-items: end;
+            gap:10px;
+            position:relative;
+            list-style: none;
+        }
+        
+        /* Submenus pop up when their title is hovered */
+        .submenu{
+            display:none;
+            position:absolute;
+            background-color: var(--menuBgColor);
+            transform: translateY(3rem);
+            /*border:1px solid var(--textColor);
+*/
+            li{
+                font-size: small;
+            }
+        }
+        
+        #navMenu :hover .submenu{
+            display:block;
+        }
+
+    }
+    
+    @media only screen and (max-width: 600px){
+        h3{
+            display:none;
+        }
+
+        nav{
+            /* The hamburguer menu, and not the options, is visible */
+            #navMenu{
+                flex-direction: column;
+                display:none;
+                position: absolute;
+                background-color: var(--menuBgColor);
+                border: 1px solid var(--menuBgContrastColor)
+            }
+
+            #hamburguerIcon{
+                display:block;
+            }
+
+            .submenu{
+                display:block;
+                position:relative;
+                transform: none;
+            }
+
+            /* When tapping on the hamburguer icon the options appear */
+            /* Note for me: while nesting, just ":hover" is an item inside that is being hovered, while "&:hover" is the same element being hovered */
+            &:hover #navMenu{
+                display:block;
+                right:0;
+            }
+        }
+    }
+}
+
+    #technicsArea{
+        display: flex;
+        flex-direction: row;
+        scrollbar-width:thin;
+        overflow-y: auto;
+        width: 100%;
+        height: auto;
+
+        div{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20vw;
+            min-width: 200px;
+            /*border: 1px solid var(--menuBgContrastColor);*/
+            background-color: var(--menuBgColor);
+            margin: 3px;
+ 
+            img{
+                max-width: 80%;
+            }
+        }
+
+    }
+
+.mainGame{
+    padding:10vw;
+    width:100%;
+
+    .br{
+        width:100%;
+        height:5px;
+        background-color: var(--menuBgContrastColor);
+        margin-top: 5vh;
+        margin-bottom:5vh;
+    }
+
+    .highlightedPictureArea{
+        display:flex;
+        width:100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .highlightedPicture{
+            height:60vh;
+            width:auto;
+        }
+    }
+
+    .gallery{
+        padding: var(--paddingBig);
+        display:grid;
+        justify-content: center;
+        gap: var(--paddingSmall);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+        @media only screen and (max-width:600px){
+            grid-template-columns: auto;
+        }
+
+        .PictureDiv{       
+            position:relative;
+            width:100%;
+            transition: transform 0.5s;
+            
+            .Picture{
+                width: 100%;
+                height:auto;
+                max-width: 60vw;            
+            }
+    
+            span{
+                opacity: 0;
+                /*border:1px solid var(--menuBgContrastColor);*/
+                background-color: var(--menuBgColor);
+                padding:10px;
+                margin:3px;
+                position:absolute;
+                top:0;
+                left:0;
+                transition: opacity 0.5s;
+            }
+        }
+        
+        &:has(.Picture:hover){
+            .PictureDiv{
+                transform:scale(0.8);
+            }
+            
+            .PictureDiv:hover{
+                
+                transform:scale(2);
+                z-index: 10;
+
+                span{
+                    opacity:1;
+                }
+
+                @media only screen and (max-width: 900px){
+                    transform: scale(1.5);;
+                }
+            }
+        }
+    }
+}
+
+
+#topAnchor{
+    position:fixed;
+    bottom:var(--paddingBig);
+    right:var(--paddingBig);
+    border-radius: 50%;
+
+    &:hover{
+        background-color: var(--menuBgColor);
+        border: 1px solid var(--menuBgContrastColor);
+    }
+
+    .smallIcon{
+        width:var(--paddingBig);
+        height: var(--paddingBig);;
+    }
+}
+
+footer{
+    background-color: var(--menuBgColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:var(--paddingBig);
+}
