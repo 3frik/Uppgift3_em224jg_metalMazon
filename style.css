@@ -8,7 +8,7 @@
     --menuBgContrastColor2: rgb(119, 189, 255);
     --textColor: black;
     --textColor2: white;
-    --maxSize:120px;
+    --maxSize:200px;
     --paddingBig: 30px;
     --paddingSmall:10px;
 
@@ -24,11 +24,13 @@ body{
     color:var(--textColor);
     padding:0;
     margin:0;
-
+    
     h1, h2, h3, h4 ,p{
         margin: 0;
         margin-left:var(--paddingBig);
         margin-right:var(--paddingBig);
+        align-self: center;
+        text-align: center;
     }
 
     li{
@@ -84,16 +86,60 @@ body{
         padding:5px;
         font-size: large;
         max-width: 200px;
+        transition: transform 0.5s;
         
         img{
             width:15%;
             height:auto;
+        }
+
+        &:hover{
+            transform:scale(1.2);
         }
     }
 
     .urgent{
         background-color: var(--menuBgContrastColorExtreme);
     }
+
+    form{
+    padding:5vh;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    background-color: var(--bgcolor2);
+    width: 100%;
+    .field{
+        display: flex;
+        flex-direction: column;
+        
+        &:hover{
+            font-weight: bold;
+            input{
+                border: 2px solid black;
+            }
+        }
+    }
+    .horizontal{
+        flex-direction: row;
+        gap:15px;
+    }
+    input{
+        border-radius: 5px;
+    }
+    *{
+        padding:10px;
+    }
+
+    button{
+        border-radius: 5px;
+        background-color: var(--menuBgColor);
+        transition: background-color 0.5s;
+
+        &:hover{
+            background-color: var(--menuBgContrastColor);
+        }
+    }
+}
 }
 
 /*MOBILE UPPER AREA (to cover camera) AND NAVIGATION TOOLS*/
@@ -173,7 +219,7 @@ header{
 /*For Webb*/
 @media (min-width:700px){
     header{
-        position:sticky;
+        position:absolute;
         top:0;
         bottom:auto;
         
@@ -182,7 +228,6 @@ header{
         }
 
         nav{
-
             order: 2;
             #hamburguerIcon{
                 display:none;
@@ -209,6 +254,7 @@ header{
 #contentArea{
     display: grid;
     grid-template-columns: 1fr;
+    padding-top: 120px;
 
     .whitespaceArea{
         display:none;
@@ -239,8 +285,6 @@ header{
         }
     }
 }
-
-
 
 #topAnchor{
     position:fixed;
@@ -281,16 +325,16 @@ footer{
         border-radius:50%;
         min-width:100px;
         min-height: 100px;
-        max-width: 30%;
-        max-height: 30%;
+        max-width: 50%;
+        max-height: 50%;
     }
 }
 
 /* URGENT SERVICE */
 span.urgent{
-    transform:scale(1.8);
+    transform:scale(1.2);
     position:sticky;
-    top:15vh;
+    top:10vh;
 }
 .col2{
     display:grid;
@@ -300,14 +344,5 @@ span.urgent{
     
     li{
         align-items: center;
-    }
-}
-form{
-    padding:5vh;
-    padding-right: 20vw;
-    padding-left: 20vw;
-    background-color: var(--bgcolor2);
-    *{
-        padding:10px;
     }
 }
