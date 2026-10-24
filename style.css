@@ -122,6 +122,7 @@ header{
     position:fixed;
     bottom:0; 
     top:auto;
+    z-index: 10;
 
     #MMLogo{
         width:20vw;
@@ -216,10 +217,18 @@ header{
         padding:30px;
         height:80vh;
     }
-}
-#content {
-    width:100%;
-    height:100vh;
+    #content {
+        width:100%;
+        height:100vh;
+        margin-top: 10vh;
+    }
+    #realContent{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap:30px;
+        padding:15px;
+    }
 }
 @media (min-width:700px){
     #contentArea{
@@ -231,87 +240,6 @@ header{
     }
 }
 
-.mainGame{
-    padding:10vw;
-    width:100%;
-
-    .br{
-        width:100%;
-        height:5px;
-        background-color: var(--menuBgContrastColor);
-        margin-top: 5vh;
-        margin-bottom:5vh;
-    }
-
-    .highlightedPictureArea{
-        display:flex;
-        width:100%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        .highlightedPicture{
-            height:60vh;
-            width:auto;
-        }
-    }
-
-    .gallery{
-        padding: var(--paddingBig);
-        display:grid;
-        justify-content: center;
-        gap: var(--paddingSmall);
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-        @media only screen and (max-width:600px){
-            grid-template-columns: auto;
-        }
-
-        .PictureDiv{       
-            position:relative;
-            width:100%;
-            transition: transform 0.5s;
-            
-            .Picture{
-                width: 100%;
-                height:auto;
-                max-width: 60vw;            
-            }
-    
-            span{
-                opacity: 0;
-                /*border:1px solid var(--menuBgContrastColor);*/
-                background-color: var(--menuBgColor);
-                padding:10px;
-                margin:3px;
-                position:absolute;
-                top:0;
-                left:0;
-                transition: opacity 0.5s;
-            }
-        }
-        
-        &:has(.Picture:hover){
-            .PictureDiv{
-                transform:scale(0.8);
-            }
-            
-            .PictureDiv:hover{
-                
-                transform:scale(2);
-                z-index: 10;
-
-                span{
-                    opacity:1;
-                }
-
-                @media only screen and (max-width: 900px){
-                    transform: scale(1.5);;
-                }
-            }
-        }
-    }
-}
 
 
 #topAnchor{
@@ -331,10 +259,55 @@ header{
     }
 }
 
+/* FOOTER */
 footer{
     background-color: var(--menuBgColor);
     display: flex;
     flex-direction: row;
     align-items: center;
     padding:var(--paddingSmall);
+}
+
+/*ABOUT*/
+.staffPicture{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top:5vh;
+    padding-bottom: 5vh;
+
+    img{
+        border-radius:50%;
+        min-width:100px;
+        min-height: 100px;
+        max-width: 30%;
+        max-height: 30%;
+    }
+}
+
+/* URGENT SERVICE */
+span.urgent{
+    transform:scale(1.8);
+    position:sticky;
+    top:15vh;
+}
+.col2{
+    display:grid;
+    grid-template-columns: auto auto;
+    gap:15px;
+    column-gap: 50px;
+    
+    li{
+        align-items: center;
+    }
+}
+form{
+    padding:5vh;
+    padding-right: 20vw;
+    padding-left: 20vw;
+    background-color: var(--bgcolor2);
+    *{
+        padding:10px;
+    }
 }
