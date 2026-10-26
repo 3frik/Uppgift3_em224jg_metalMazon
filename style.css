@@ -9,12 +9,12 @@
     --textColor: black;
     --textColor2: white;
     --maxSize:200px;
-    --paddingBig: 30px;
-    --paddingSmall:10px;
+    --paddingBig: 15px;
+    --paddingSmall:5px;
 
-    @media only screen and (max-width:600px){
-        --paddingBig:15px;
-        --paddingSmall:5px;
+    @media only screen and (min-width:700px){
+        --paddingBig:30px;
+        --paddingSmall:10px;
     }
 }
 
@@ -165,7 +165,7 @@ header{
     width: 100%;
     max-height: 120px;
     padding:var(--paddingBig);
-    position:fixed;
+    position:absolute;
     bottom:0; 
     top:auto;
     z-index: 10;
@@ -345,4 +345,13 @@ span.urgent{
     li{
         align-items: center;
     }
+}
+
+/*HOME*/
+.map{
+    border:2px,solid,black;
+}
+#openingHours{
+    display: grid;
+    grid-template-columns: auto auto;
 }
