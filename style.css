@@ -1,0 +1,454 @@
+:root{
+    --bgcolor: white;
+    --menuBgColor: rgb(85, 129, 170);
+    --menuBgContrastColor: rgb(21, 74, 124);
+    --menuBgContrastColorExtreme: rgb(190, 6, 68);
+    --bgcolor2: rgb(119, 189, 255);
+    --menuBgColor2: rgb(119, 189, 255);
+    --menuBgContrastColor2: rgb(119, 189, 255);
+    --textColor: black;
+    --textColor2: white;
+    --maxSize:200px;
+    --paddingBig: 15px;
+    --paddingSmall:5px;
+
+    @media only screen and (min-width:700px){
+        --paddingBig:30px;
+        --paddingSmall:10px;
+    }
+}
+
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--bgcolor);
+    color:var(--textColor);
+    padding:0;
+    margin:0;
+    
+    h1, h2, h3, h4 ,p{
+        margin: 0;
+        margin-left:var(--paddingBig);
+        margin-right:var(--paddingBig);
+        align-self: center;
+        text-align: center;
+    }
+
+    li{
+        list-style: none;
+        display:flex;
+        flex-direction:column;
+        align-items: end;
+        margin:0;
+        padding:0;
+        padding-top:var(--paddingSmall);
+        padding-bottom: var(--paddingSmall);
+    }
+    
+    a{
+        text-decoration: none;
+        color:var(--textColor);
+        padding: var(--paddingSmall);
+        display:block;
+        transition: color 0.2s, background-color 0.2s;
+
+        &:hover{
+            color:var(--bgcolor);
+            background-color: var(--textColor);    
+        }
+    }
+    
+    section.mainGame:nth-child(odd){
+        --bgcolor: var(--bgcolorEven);
+        background-color: var(--bgcolor);
+        --menuBgColor : var(--menuBgColorEven);
+        --menuBgContrastColor:var(--menuBgContrastColorEven);
+    }
+    
+    p{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
+    *{
+        box-sizing: border-box; 
+        /* Note to me: This includes padding in width. Otherwise, padding adds to width. Why is not this as default? */
+    }
+
+    .telephoneSpam{
+        background-color: var(--menuBgContrastColorExtreme);
+        color:var(--textColor2);
+        border-radius: 120px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap:15px;
+        padding:5px;
+        font-size: large;
+        max-width: 200px;
+        transition: transform 0.5s;
+        
+        img{
+            width:15%;
+            height:auto;
+        }
+
+        &:hover{
+            transform:scale(1.2);
+        }
+    }
+
+    .urgent{
+        background-color: var(--menuBgContrastColorExtreme);
+    }
+
+    form{
+    padding:5vh;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    background-color: var(--bgcolor2);
+    width: 100%;
+    .field{
+        display: flex;
+        flex-direction: column;
+        
+        &:hover{
+            font-weight: bold;
+            input{
+                border: 2px solid black;
+            }
+        }
+    }
+    .horizontal{
+        flex-direction: row;
+        gap:15px;
+    }
+    input{
+        border-radius: 5px;
+    }
+    *{
+        padding:10px;
+    }
+
+    button{
+        border:none;
+        background-color: var(--menuBgContrastColor);
+        color:white;
+        transition: background-color 0.5s;
+
+        &:hover{
+            background-color: black;
+        }
+    }
+}
+}
+
+/*MOBILE UPPER AREA (to cover camera) AND NAVIGATION TOOLS*/
+#mobileLogoArea{
+    height:3vh;
+    position:fixed;
+    top:0;
+    width:100%;
+    background-color: black; 
+}
+@media only screen and (min-width:700px) {
+    #mobileLogoArea{
+        display:none;
+    }
+}
+
+header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--menuBgColor);
+    width: 100%;
+    max-height: 90px;
+    padding:var(--paddingBig);
+    position:fixed;
+    bottom:0; 
+    top:auto;
+    z-index: 10;
+
+    
+    
+    #MMLogo{
+        width:20vw;
+        max-width: var(--maxSize);
+    }
+    
+    a{
+        order:1;
+    }
+    
+    span{
+        order:2;
+    }
+
+    nav{
+        order:3;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 8vh;
+        
+        #navMenu{
+            display:none;
+            flex-direction: column;
+            position: absolute;
+            background-color: var(--menuBgColor);
+            bottom:0;
+            right:0;
+            transform: translateY(-60px)
+        }
+        
+        #hamburguerIcon{
+            display:block;
+            max-height: 40px;
+        }
+        
+        .submenu{
+            display:block;
+            position:absolute;
+            transform: none;
+        }
+        
+        /* When tapping on the hamburguer icon the options appear */
+        &:hover #navMenu{
+            display:block;
+        }   
+    }
+}
+/*For Webb*/
+@media (min-width:800px){
+    /*To pop out/in when scrolling. NOT with animation*/
+    html{
+        container-type: scroll-state;
+    }
+
+    header{
+        position:fixed;
+        top:0;
+        bottom:auto;
+        transition: transform 0.5s;
+        
+        span{
+            order: 3;
+        }
+        
+        nav{
+            order: 2;
+            #hamburguerIcon{
+                display:none;
+            }
+            
+            #navMenu{    
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: end;
+                gap:10px;
+                position:relative;
+                list-style: none;
+                transform: translateY(0);
+            }
+            
+            &:hover #navMenu{
+                display:flex;
+            }
+        }
+    }
+}
+/*For hiding the header when scrolling down*/
+@container scroll-state(scrolled: bottom){
+    #header{
+        transform: translateY(-100%);
+    }
+}
+@container scroll-state(scrolled: top){
+    #header{
+        transform: translateY(0);
+    }
+}
+
+/*MAIN CONTENT AREA (and whitespaces around in webb version)*/
+#contentArea{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 120px;
+
+    .whitespaceArea{
+        display:none;
+        flex-direction: column;
+        justify-content:end;
+        padding:30px;
+        height:80vh;
+    }
+    #content {
+        width:100%;
+        height:100vh;
+        margin-top: 10vh;
+    }
+    #realContent{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap:30px;
+        padding:15px;
+    }
+}
+@media (min-width:700px){
+    #contentArea{
+        grid-template-columns: 1fr 2fr 1fr;
+
+        .whitespaceArea{
+            display:block;
+        }
+    }
+}
+
+#topAnchor{
+    position:fixed;
+    bottom:var(--paddingBig);
+    right:var(--paddingBig);
+    border-radius: 50%;
+
+    &:hover{
+        background-color: var(--menuBgColor);
+        border: 1px solid var(--menuBgContrastColor);
+    }
+
+    .smallIcon{
+        width:var(--paddingBig);
+        height: var(--paddingBig);;
+    }
+}
+
+/* FOOTER */
+footer{
+    background-color: var(--menuBgColor);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:var(--paddingSmall);
+}
+
+/*ABOUT*/
+.staffPicture{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top:5vh;
+    padding-bottom: 5vh;
+    animation: fadeIn;
+    animation-timeline: view();
+
+    img{
+        border-radius:50%;
+        min-width:100px;
+        min-height: 100px;
+        max-width: 50%;
+        max-height: 50%;
+    }
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0; transform: scale(0.4)}
+    10%{opacity:0; transform: scale(0.4)}
+    30%{opacity: 100%; transform: scale(1)}
+    80%{opacity: 100%; transform: scale(1)}
+    95%{opacity: 0; transform: scale(0.4)}
+}
+
+/* URGENT SERVICE */
+span.urgent{
+    transform:scale(1.2);
+    position:sticky;
+    top:10vh;
+}
+.col2{
+    display:grid;
+    grid-template-columns: auto auto;
+    gap:15px;
+    column-gap: 50px;
+    
+    li{
+        align-items: center;
+    }
+}
+
+/*HOME*/
+.map{
+    border:2px,solid,black;
+}
+#openingHours{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+/*CATALOG*/
+#productCardsArea{
+    display: grid;
+    grid-template-columns: auto;
+    .productCard{
+        background-color: var(--bgcolor2);
+        margin:var(--paddingSmall);
+        padding:var(--paddingSmall);
+        display: flex;
+        flex-direction: column;
+        justify-content:baseline;
+        align-items: baseline;
+        height:80vh;
+        
+        img{
+            max-height: 45vh;
+            width:100%;
+            align-self: center;
+        }
+        
+        h1{
+            font-size: medium;
+            font-weight: bold;
+        }
+        
+        p, h1{
+            padding:3px;
+            text-align: start;
+            width:100%;
+            overflow: hidden;
+            max-height: 5rem;
+        }
+
+        a{
+            background-color: var(--menuBgContrastColor);
+            color:white;
+            align-self: center;
+            margin-top: 15px;
+            padding: var(--paddingBig);
+        }
+        a:hover{
+            background-color: black;   
+        }
+    }
+}
+@media (min-Width: 700px) {
+    #productCardsArea{
+        grid-template-columns: auto auto;
+
+        .productCard{
+            height:80vh;
+        }
+
+        a{
+            height:50px;
+            padding: var(--paddingSmall);
+        }
+    }
+}
+@keyframes slideIn{
+    0%{ transform:translateX(-100vw) }
+    10%{ transform:translateX(-100vw) }
+    20%{ transform:translateX(0) }
+}

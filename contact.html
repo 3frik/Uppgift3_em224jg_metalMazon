@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metal Mazon - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="mobileLogoArea">
+            <a class="Logo" href="./home.html">
+                <img id="MMLogo" class="logo" src="./sources/MazonLogo.png" alt="Metal Mazon Logo">
+            </a>
+    </header>
+    <header id="header">
+        <a class="Logo" href="./home.html">
+            <img id="MMLogo" class="logo" src="./sources/MazonLogo.png" alt="Metal Mazon Logo">
+        </a>
+        
+        <nav>
+                <img id="hamburguerIcon" class="headerPicture" src="sources/Hamburger_icon.webp" alt="Hamburguer menu icon">
+                <ul id="navMenu">
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./catalogue.html">Catalogue</a></li>
+                    <li><a href="./contact.html">Contact us</a></li>
+                    <li><a href="./customers.html">Our customers</a></li>
+                    <li><a href="./urgent.html">Urgent service</a></li>
+                </ul>
+            </nav>
+            
+        <span class="telephoneSpam">570 2449 <img id="TelephoneIcon" src="./sources/icons8-phone-100.png" alt="Telephone icon"></span>
+
+    </header>
+
+    <div id="contentArea">
+        <div id="whitespace1" class="whitespaceArea"></div>
+        <div id="content">
+            <div id="realContent">
+                <h2>Contact us</h2>
+                <p>If you have any questions, or need our assistance, please feel free to contact us through our telephone number or through this tool. Just fill the fields and we will get in touch with you as soon as possible.</p>
+                <span class="telephoneSpam">570 2449 <img id="TelephoneIcon" src="./sources/icons8-phone-100.png" alt="Telephone icon"></span>
+                <form >
+                    <legend>Contact me:</legend>
+                    <div class="field">
+                        <label for="company">Company name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="field">
+                        <label for="name">Your name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="name" id="telephoneTitle">Telephone number</label>
+                        <input type="number" id="telephone" name="telephoneNumber" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="address">Adress</label>
+                        <input type="address" id="address" name="address">
+                    </div>
+                    <div class="field">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="field horizontal">
+                        <input type="checkbox" name="terms" required> I agree to the terms
+                    </div>
+                    <button type="submit">Contact me</button>
+                </form>
+
+            </div>
+            <footer>
+                <p id="footerParagraph">A website made out of love from Erik Mazón Larson</p>
+            </footer>
+        </div>
+        <div id="whitespace2" class="whitespaceArea"></div>
+    </div>
+</body>
+</html>
