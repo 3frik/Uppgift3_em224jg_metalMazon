@@ -274,6 +274,7 @@ header{
     grid-template-columns: 1fr;
     padding-top: 120px;
     color: var(--textColor2);
+    padding-bottom: 80px;
 
     .whitespaceArea{
         display:none;
@@ -330,6 +331,7 @@ footer{
     flex-direction: row;
     align-items: center;
     padding:var(--paddingSmall);
+    margin-top: var(--paddingBig);
 }
 
 /*ABOUT*/
@@ -381,16 +383,19 @@ span.urgent{
 /*HOME*/
 .map{
     border:2px,solid,black;
+    width:80%;
 }
 #openingHours{
     display: grid;
     grid-template-columns: auto auto;
 }
 
-/*CATALOG*/
+/*CATALOGUE*/
 #productCardsArea{
     display: grid;
     grid-template-columns: auto;
+    gap:var(--paddingSmall);
+
     .productCard{
         background-color: var(--bgcolor2);
         margin:var(--paddingSmall);
@@ -399,7 +404,7 @@ span.urgent{
         flex-direction: column;
         justify-content:baseline;
         align-items: baseline;
-        height:80vh;
+        height:100%;
         
         img{
             max-height: 45vh;
@@ -435,10 +440,6 @@ span.urgent{
 @media (min-Width: 700px) {
     #productCardsArea{
         grid-template-columns: auto auto;
-
-        .productCard{
-            height:80vh;
-        }
 
         a{
             height:50px;
@@ -483,6 +484,13 @@ span.urgent{
 
         h3{
             font-size: small;
+        }
+
+        .productAndDateArea{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
         }
 
         .starIcon{
