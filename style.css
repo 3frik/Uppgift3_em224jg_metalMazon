@@ -1,13 +1,13 @@
 :root{
     --bgcolor: white;
-    --menuBgColor: rgb(85, 129, 170);
-    --menuBgContrastColor: rgb(21, 74, 124);
+    --menuBgColor: rgb(0, 56, 109);
+    --menuBgContrastColor: rgb(14, 106, 192);
     --menuBgContrastColorExtreme: rgb(190, 6, 68);
-    --bgcolor2: rgb(119, 189, 255);
-    --menuBgColor2: rgb(119, 189, 255);
+    --bgcolor2: rgb(200, 228, 253);
+    --menuBgColor2: rgb(170, 213, 253);
     --menuBgContrastColor2: rgb(119, 189, 255);
-    --textColor: black;
-    --textColor2: white;
+    --textColor: white;
+    --textColor2: black;
     --maxSize:200px;
     --paddingBig: 15px;
     --paddingSmall:5px;
@@ -52,21 +52,14 @@ body{
         transition: color 0.2s, background-color 0.2s;
 
         &:hover{
-            color:var(--bgcolor);
-            background-color: var(--textColor);    
+            color: var(--textColor2);
+            background-color: var(--bgcolor2);    
         }
     }
     
-    section.mainGame:nth-child(odd){
-        --bgcolor: var(--bgcolorEven);
-        background-color: var(--bgcolor);
-        --menuBgColor : var(--menuBgColorEven);
-        --menuBgContrastColor:var(--menuBgContrastColorEven);
-    }
-    
     p{
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: var(--paddingSmall);
+        padding-bottom: var(--paddingSmall);
     }
     
     *{
@@ -76,14 +69,14 @@ body{
 
     .telephoneSpam{
         background-color: var(--menuBgContrastColorExtreme);
-        color:var(--textColor2);
+        color:var(--textColor);
         border-radius: 120px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap:15px;
-        padding:5px;
+        gap:var(--paddingSmall);
+        padding:var(--paddingSmall);
         font-size: large;
         max-width: 200px;
         transition: transform 0.5s;
@@ -107,7 +100,9 @@ body{
     padding-right: 5vw;
     padding-left: 5vw;
     background-color: var(--bgcolor2);
+    color: var(--textColor2);
     width: 100%;
+
     .field{
         display: flex;
         flex-direction: column;
@@ -119,13 +114,16 @@ body{
             }
         }
     }
+
     .horizontal{
         flex-direction: row;
-        gap:15px;
+        gap:var(--paddingSmall);
     }
+
     input{
         border-radius: 5px;
     }
+
     *{
         padding:10px;
     }
@@ -133,7 +131,7 @@ body{
     button{
         border:none;
         background-color: var(--menuBgContrastColor);
-        color:white;
+        color:var(--textColor);
         transition: background-color 0.5s;
 
         &:hover{
@@ -170,8 +168,6 @@ header{
     bottom:0; 
     top:auto;
     z-index: 10;
-
-    
     
     #MMLogo{
         width:20vw;
@@ -277,25 +273,27 @@ header{
     display: grid;
     grid-template-columns: 1fr;
     padding-top: 120px;
+    color: var(--textColor2);
 
     .whitespaceArea{
         display:none;
         flex-direction: column;
         justify-content:end;
-        padding:30px;
+        padding:var(--paddingBig);
         height:80vh;
     }
     #content {
         width:100%;
         height:100vh;
-        margin-top: 10vh;
+        margin-top: var(--paddingSmall);
     }
     #realContent{
         display:flex;
         flex-direction: column;
         align-items: center;
-        gap:30px;
-        padding:15px;
+        gap:var(--paddingBig);
+        padding-top:var(--paddingBig);
+        padding-bottom:var(--paddingBig);
     }
 }
 @media (min-width:700px){
@@ -342,6 +340,7 @@ footer{
     align-items: center;
     padding-top:5vh;
     padding-bottom: 5vh;
+    color: var(--textColor2);
     animation: fadeIn;
     animation-timeline: view();
 
@@ -371,7 +370,7 @@ span.urgent{
 .col2{
     display:grid;
     grid-template-columns: auto auto;
-    gap:15px;
+    gap:var(--paddingSmall);
     column-gap: 50px;
     
     li{
@@ -423,7 +422,7 @@ span.urgent{
 
         a{
             background-color: var(--menuBgContrastColor);
-            color:white;
+            color:var(--textColor);
             align-self: center;
             margin-top: 15px;
             padding: var(--paddingBig);
@@ -451,4 +450,44 @@ span.urgent{
     0%{ transform:translateX(-100vw) }
     10%{ transform:translateX(-100vw) }
     20%{ transform:translateX(0) }
+}
+
+/*CUSTOMERS*/
+.commentCard{
+    background-color: var(--bgcolor2);
+    margin:var(--paddingSmall);
+    padding:var(--paddingSmall);
+    display:flex;
+    flex-direction: row;
+    gap: var(--paddingSmall);
+    width: 100%;
+    
+    .commentPicture{
+        width: 60%;
+    }
+
+    .commentArea{
+        display: flex;
+        flex-direction: column;
+        justify-content:start;
+        gap:2px;
+        width:30%;
+        padding:0;
+        align-items: center;
+
+        p,h1,h2, h3{
+            text-align: start;
+            width:100%;
+            margin:0;
+        }
+
+        h3{
+            font-size: small;
+        }
+
+        .starIcon{
+            width: 20px;
+            height:auto;
+        }
+    }
 }
