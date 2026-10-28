@@ -465,17 +465,22 @@ span.urgent{
     
     .commentPicture{
         width: 60%;
-    }
 
+        img{
+            width:100%;
+        }
+    }
+    
     .commentArea{
         display: flex;
         flex-direction: column;
         justify-content:start;
         gap:2px;
-        width:30%;
-        padding:0;
+        width:40%;
+        padding:var( --paddingBig);
+        
         align-items: center;
-
+        
         p,h1,h2, h3{
             text-align: start;
             width:100%;
@@ -497,5 +502,26 @@ span.urgent{
             width: 20px;
             height:auto;
         }
+    }
+}
+
+.noPicture{
+    background-color: transparent;
+    gap: var(--paddingBig);
+    flex-direction: column;
+    
+    .commentArea{
+        width:100%;
+        background-color: var(--bgcolor2);
+    }
+}
+
+@media screen and (min-Width:700px){
+    .noPicture{
+        flex-direction: row;
+
+        .commentArea{
+            width: 50%;
+        } 
     }
 }
