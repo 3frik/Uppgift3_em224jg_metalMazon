@@ -83,7 +83,7 @@ body{
         transition: transform 0.5s;
         
         img{
-            width:15%;
+            width:9%;
             height:auto;
         }
 
@@ -197,7 +197,11 @@ header{
             background-color: var(--menuBgColor);
             bottom:0;
             right:0;
-            transform: translateY(-60px)
+            transform: translateY(-60px);
+
+            :nth-child(6){
+                background-color: var(--menuBgContrastColorExtreme);
+            }
         }
         
         #hamburguerIcon{
@@ -218,7 +222,7 @@ header{
     }
 }
 /*For Webb*/
-@media (min-width:800px){
+@media (min-width:700px){
     /*To pop out/in when scrolling. NOT with animation*/
     html{
         container-type: scroll-state;
@@ -336,6 +340,21 @@ footer{
 }
 
 /*ABOUT*/
+#heroOffice{    /*This is also in Home */
+    width: 100%;
+    height: 200px;
+    background-image: url("./sources/office-small.webp");
+    background-size: cover;
+    background-position: center;
+    color:white;
+    text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+}
+@media screen and (min-width:700px){
+    #heroOffice{
+        background-image: url("./sources/office-big.webp");
+    }
+}
+
 .staffPicture{
     display:flex;
     flex-direction: column;
@@ -375,9 +394,18 @@ span.urgent{
     grid-template-columns: auto auto;
     gap:var(--paddingSmall);
     column-gap: 50px;
+    list-style-type:circle;
     
     li{
         align-items: center;
+        display:flex;
+        flex-direction: row;
+        gap:var(--paddingSmall);
+        font-size: larger;
+
+        img{
+            height:1rem;
+        }
     }
 }
 
@@ -392,47 +420,76 @@ span.urgent{
 }
 
 /*CATALOGUE*/
+#localNavbar{
+    display:flex;
+    flex-direction: row;
+    position:sticky;
+    top:0;
+
+    a{
+        background-color: var(--menuBgColor);
+
+        &:hover{
+            background-color: var(--menuBgColor2);
+        }
+    }
+}
+
 #productCardsArea{
     display: flex;
     flex-direction: column;
-
-    .productCard{
-        background-color: var(--bgcolor2);
-        margin:var(--paddingSmall);
-        padding:var(--paddingSmall);
-        display: flex;
-        flex-direction: column;
-        justify-content:baseline;
-        height:100%;
-        
-        img{
-            max-height: 45vh;
-            width:100%;
-            align-self: center;
-        }
-        
-        p, h1{
-            padding:3px;
-            text-align: start;
-            width:100%;
-        }
-
+    
+    section{
+        background-color: var(--bgcolor);
+        padding-top:var(--paddingBig);
+    
         h1{
-            font-size: 3rem;
-            margin: var(--paddingBig)
+            font-size: 2rem;
+            margin: 0;
+            width:100%;
+            background-color: var(--bgcolor2);
         }
 
-        a{
-            background-color: var(--menuBgContrastColor);
-            color:var(--textColor);
-            align-self: flex-end;
-            align-items: center;
-            margin-top: 15px;
-            padding: var(--paddingBig);
+        @media screen and (min-width:700px){
+            h1{
+                font-size: 3rem;
+            }
         }
-        a:hover{
-            background-color: black;   
-        }
+            
+                
+                .productCard{
+                    background-color: var(--menuBgColor2);
+                    margin:var(--paddingSmall);
+                    padding:var(--paddingSmall);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content:baseline;
+                    height:100%;
+                    
+                    img{
+                        max-height: 45vh;
+                        width:100%;
+                        align-self: center;
+                    }
+                    
+                    p, h1{
+                        padding:3px;
+                        text-align: start;
+                        width:100%;
+                    }
+                    
+                    a{
+                        background-color: var(--menuBgContrastColor);
+                        color:var(--textColor);
+                        align-self: flex-end;
+                        align-items: center;
+                        margin-top: 15px;
+                        padding: var(--paddingBig);
+                    }
+                    a:hover{
+                        background-color: black;   
+                    }
+                }
     }
 }
 
