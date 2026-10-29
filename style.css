@@ -60,6 +60,7 @@ body{
     p{
         padding-top: var(--paddingSmall);
         padding-bottom: var(--paddingSmall);
+        font-size: large;
     }
     
     *{
@@ -392,9 +393,8 @@ span.urgent{
 
 /*CATALOGUE*/
 #productCardsArea{
-    display: grid;
-    grid-template-columns: auto;
-    gap:var(--paddingSmall);
+    display: flex;
+    flex-direction: column;
 
     .productCard{
         background-color: var(--bgcolor2);
@@ -403,7 +403,6 @@ span.urgent{
         display: flex;
         flex-direction: column;
         justify-content:baseline;
-        align-items: baseline;
         height:100%;
         
         img{
@@ -412,23 +411,22 @@ span.urgent{
             align-self: center;
         }
         
-        h1{
-            font-size: medium;
-            font-weight: bold;
-        }
-        
         p, h1{
             padding:3px;
             text-align: start;
             width:100%;
-            overflow: hidden;
-            max-height: 5rem;
+        }
+
+        h1{
+            font-size: 3rem;
+            margin: var(--paddingBig)
         }
 
         a{
             background-color: var(--menuBgContrastColor);
             color:var(--textColor);
-            align-self: center;
+            align-self: flex-end;
+            align-items: center;
             margin-top: 15px;
             padding: var(--paddingBig);
         }
@@ -437,16 +435,7 @@ span.urgent{
         }
     }
 }
-@media (min-Width: 700px) {
-    #productCardsArea{
-        grid-template-columns: auto auto;
 
-        a{
-            height:50px;
-            padding: var(--paddingSmall);
-        }
-    }
-}
 @keyframes slideIn{
     0%{ transform:translateX(-100vw) }
     10%{ transform:translateX(-100vw) }
@@ -499,7 +488,7 @@ span.urgent{
         }
 
         .starIcon{
-            width: 20px;
+            width: 15px;
             height:auto;
         }
     }
@@ -523,5 +512,35 @@ span.urgent{
         .commentArea{
             width: 50%;
         } 
+    }
+}
+/*PRODUCT*/
+.productGallery{
+    display: grid;
+    grid-template-columns: auto;
+    gap: var(--paddingBig);
+    img{
+        width:100%
+    }
+}
+@media screen and (min-width:700px){
+    .productGallery{
+        grid-template-columns: auto auto;
+    }
+}
+
+.priceTag{
+    >:nth-child(2){
+        display:none;
+    }
+
+    &:hover{
+        p{
+            display:none;
+        }
+
+        >:nth-child(2){
+            display:block;
+        }
     }
 }

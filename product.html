@@ -37,7 +37,80 @@
         <div id="whitespace1" class="whitespaceArea"></div>
         <div id="content">
             <div id="realContent">
-                <h1></h1>
+                <h1>Product information</h1>
+                <p>Blinds are a practical, versatile choice for almost any room. They give you precise control over light and privacy: tilt the slats to let in soft daylight while keeping prying eyes out, or raise them fully for an unobstructed view. They’re easy to clean with a quick wipe or dusting, which makes them a good fit for kitchens and bathrooms, especially in moisture-resistant materials like faux wood or aluminum. Blinds are also space-efficient, with a slim profile that suits modern interiors, and they help with energy efficiency by blocking summer heat and adding a layer of insulation in winter. With options ranging from budget-friendly to custom-made, they’re durable, long-lasting, and easy to match to your style.</p>
+                <h2>Gallery of blinds</h2>
+                <div class="productGallery">
+                    <picture>
+                        <source media="screen and (min-width:700px)" srcset="./sources/products/verticalPicturesWeb/blinds.webp">
+                        <img src="./sources/Products/horizontalpicturesMobile/blinds.webp"> 
+                    </picture>
+                    <picture>
+                        <source media="screen and (min-width:700px)" srcset="./sources/products/verticalPicturesWeb/blinds2.webp">
+                        <img src="./sources/Products/horizontalpicturesMobile/blinds2.webp"> 
+                    </picture>
+                    <picture>
+                        <source media="screen and (min-width:700px)" srcset="./sources/products/verticalPicturesWeb/blinds3.webp">
+                        <img src="./sources/Products/horizontalpicturesMobile/blinds3.webp"> 
+                    </picture>
+                </div>
+                <h2>Get an estimation of your price</h2>
+                <p>By filling this questionary you may get an aproximation for the price of  your desired product.</p>
+                <aside>Note that this service does not suibstitute the need for a visit to the place to get our measurement and assess the validity of the project.</aside>
+                <form>
+                    <div class="field">
+                        <label for="product">Product</label>
+                        <select id="productGroup" name="product" required>
+                            <option value="blind">Blind</option>
+                            <option value="door">Door</option>
+                            <option value="window">Window</option>
+                            <option value="grind">Grind</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <p>Size</p>
+                        <div class="horizontal">
+                            <div class="field horizontal">
+                                <label for="height">Height</label>
+                                <input name="height" type="number" required>
+                            </div>
+                            <div class="field horizontal">
+                                <label for="width">Width</label>
+                                <input name="width" type="number" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="address">Address</label>
+                        <input name="address" type="text">
+                        <input name="address2" type="text">
+                    </div>
+                    <div class="field">
+                        <label for="elevator">Is there access to an elevator?</label>
+                        <select name="elevator">
+                            <option value="yes,needed">Yes. It is allowed and recommended to use it.</option>
+                            <option value="yes,needed">No, but it is not necessary.</option>
+                            <option value="yes,needed">No. Products and tools have to be carried manually.</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="elevator">Is there direct access to a valid parking slot by the woprking place?</label>
+                        <select name="elevator">
+                            <option value="yes,needed">Yes. It is allowed and recommended to use it.</option>
+                            <option value="yes,needed">No, but it is not necessary.</option>
+                            <option value="yes,needed">No. Products and tools have to be carried manually.</option>
+                        </select>
+                    </div>
+                    <button type="submit">Calculate aproximate price</button>
+                </form>
+                <div class="priceTag">
+                    <p>Get an estimation of your price </p>
+                    <p>Your product is estimated to cost in the range of <i>6.789€</i> to <i>12.345€</i>.</p> 
+                </div>
+                <p>You may contact us through this telephone number or through our contact formulary.</p>
+                <p>You may also come and visit ut at our office:</p>
+                <p>C/ Villa Madrid, Torrevieja</p>
+                <span class="telephoneSpam">96 571 1789 <img id="TelephoneIcon" src="./sources/icons8-phone-100.png" alt="Telephone icon"></span>
             </div>
             <footer>
                 <p id="footerParagraph">A website made out of love from Erik Mazón Larson</p>
