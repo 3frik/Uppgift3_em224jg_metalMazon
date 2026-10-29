@@ -50,8 +50,8 @@
                     </picture>
                 </div>
                 <h2>Get an estimation of your price</h2>
-                <p>By filling this questionary you may get an aproximation for the price of  your desired product.</p>
-                <aside>Note that this service does not suibstitute the need for a visit to the place to get our measurement and assess the validity of the project.</aside>
+                <p>By filling this questionary you may get an <i>aproximation</i> for the price of your desired product.</p>
+                <aside>Note that this service does not substitute the need for a visit to the place to get our measurement and assess the validity of the project.</aside>
                 <form>
                     <div class="field">
                         <label for="product">Product</label>
@@ -81,31 +81,31 @@
                         <input name="address2" type="text">
                     </div>
                     <div class="field">
-                        <label for="elevator">Is there access to an elevator?</label>
-                        <select name="elevator">
-                            <option value="yes,needed">Yes. It is allowed and recommended to use it.</option>
-                            <option value="yes,needed">No, but it is not necessary.</option>
-                            <option value="yes,needed">No. Products and tools have to be carried manually.</option>
+                        <label for="access">Is there easy access from the exterior?</label>
+                        <select id="access" name="access">
+                            <option value="easy">Yes, at bottom floor.</option>
+                            <option value="balcony">Yes, through a window or balcony.</option>
+                            <option value="difficult">No. Products and tools have to be carried several meters/floors.</option>
                         </select>
                     </div>
                     <div class="field">
-                        <label for="elevator">Is there direct access to a valid parking slot by the woprking place?</label>
-                        <select name="elevator">
-                            <option value="yes,needed">Yes. It is allowed and recommended to use it.</option>
-                            <option value="yes,needed">No, but it is not necessary.</option>
-                            <option value="yes,needed">No. Products and tools have to be carried manually.</option>
+                        <label for="freeArea">Is the working area space free?</label>
+                        <select id="freeArea" name="freeArea">
+                            <option value="free">Yes. There are no items in the place or around it.</option>
+                            <option value="tight">No. There is little space to navigate around the place.</option>
+                            <option value="occupied">No. There is a previous construction that has to be removed.</option>
                         </select>
                     </div>
                     <button type="submit">Calculate aproximate price</button>
+                    <div class="priceTag">
+                        <p>Get an estimation of your price </p>
+                        <p>Your product is estimated to cost in the range of <i>6.789€</i> to <i>12.345€</i>.</p> 
+                    </div>
                 </form>
-                <div class="priceTag">
-                    <p>Get an estimation of your price </p>
-                    <p>Your product is estimated to cost in the range of <i>6.789€</i> to <i>12.345€</i>.</p> 
-                </div>
                 <p>You may contact us through this telephone number or through our contact formulary.</p>
-                <p>You may also come and visit ut at our office:</p>
-                <p>C/ Villa Madrid, Torrevieja</p>
                 <span class="telephoneSpam">96 571 1789 <img id="TelephoneIcon" src="./sources/icons8-phone-100.png" alt="Telephone icon"></span>
+                <p>You may also come and visit ut at our office:</p>
+                <p>C/ Villa Madrid, 3. Torrevieja</p>
             </div>
             <footer>
                 <p id="footerParagraph">A website made out of love from Erik Mazón Larson</p>
