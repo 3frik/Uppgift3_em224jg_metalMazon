@@ -12,7 +12,7 @@
     --paddingBig: 15px;
     --paddingSmall:5px;
 
-    @media only screen and (min-width:700px){
+    @media screen and (min-width:900px){
         --paddingBig:30px;
         --paddingSmall:10px;
     }
@@ -233,7 +233,7 @@ header{
     }
 }
 /*For Webb*/
-@media screen and (min-width:700px){
+@media screen and (min-width:900px){
     /*To pop out/in when scrolling. NOT with animation*/
     html{
         container-type: scroll-state;
@@ -313,7 +313,7 @@ header{
         padding-bottom:var(--paddingBig);
     }
 }
-@media (min-width:700px){
+@media screen and (min-width:900px){
     #contentArea{
         grid-template-columns: 1fr 2fr 1fr;
 
@@ -348,6 +348,10 @@ footer{
     align-items: center;
     padding:var(--paddingSmall);
     margin-top: var(--paddingBig);
+    padding-bottom:100px;
+    p{
+        font-size: smaller;
+    }
 }
 
 /*ABOUT*/
@@ -360,7 +364,7 @@ footer{
     color:white;
     text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
 }
-@media screen and (min-width:700px){
+@media screen and (min-width:900px){
     #heroOffice{
         background-image: url("./sources/office-big.webp");
     }
@@ -463,7 +467,7 @@ span.urgent{
             background-color: var(--bgcolor2);
         }
 
-        @media screen and (min-width:700px){
+        @media screen and (min-width:900px){
             h1{
                 font-size: 3rem;
             }
@@ -575,7 +579,7 @@ span.urgent{
     }
 }
 
-@media screen and (min-Width:700px){
+@media screen and (min-Width:900px){
     .noPicture{
         flex-direction: row;
 
@@ -595,7 +599,7 @@ span.urgent{
         width:100%;
     }
 }
-@media screen and (min-width:700px){
+@media screen and (min-width:900px){
     .productGallery{
         grid-template-columns: auto auto;
     }
