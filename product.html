@@ -49,10 +49,10 @@
                         <img src="./sources/Products/horizontalpicturesMobile/blinds3.webp"> 
                     </picture>
                 </div>
+                <form>
                 <h2>Get an estimation of your price</h2>
                 <p>By filling this questionary you may get an <i>aproximation</i> for the price of your desired product.</p>
                 <aside>Note that this service does not substitute the need for a visit to the place to get our measurement and assess the validity of the project.</aside>
-                <form>
                     <div class="field">
                         <label for="product">Product</label>
                         <select id="productGroup" name="product" required>
@@ -62,23 +62,18 @@
                             <option value="grind">Grind</option>
                         </select>
                     </div>
-                    <div class="field">
-                        <p>Size</p>
-                        <div class="horizontal">
-                            <div class="field horizontal">
-                                <label for="height">Height</label>
-                                <input name="height" type="number" required>
-                            </div>
-                            <div class="field horizontal">
-                                <label for="width">Width</label>
-                                <input name="width" type="number" required>
-                            </div>
-                        </div>
+                    <div class="field horizontal">
+                        <span>Size</span>
+                        <label for="height">Height
+                            <input name="height" type="number" required>
+                        </label>
+                        <label for="width">Width
+                            <input name="width" type="number" required>
+                        </label>
                     </div>
                     <div class="field">
                         <label for="address">Address</label>
-                        <input name="address" type="text">
-                        <input name="address2" type="text">
+                        <textarea name="address" type="text"></textarea>
                     </div>
                     <div class="field">
                         <label for="access">Is there easy access from the exterior?</label>
