@@ -106,10 +106,6 @@ body{
         input, textarea{
             width:auto;
         }
-
-        label,span{
-            width:auto;
-        }
     }
     
     form{
@@ -157,6 +153,10 @@ body{
 
         input[type="checkbox"]{
             width:auto;
+        }
+
+        input[type="file"]{
+            border:none;
         }
     }
 }
@@ -381,8 +381,7 @@ footer{
         border-radius:50%;
         min-width:100px;
         min-height: 100px;
-        max-width: 50%;
-        max-height: 50%;
+        max-width: 80%;
     }
 }
 
@@ -422,7 +421,7 @@ span.urgent{
 
 /*HOME*/
 .map{
-    border:2px,solid,black;
+    border:2px solid black;
     width:80%;
 }
 #openingHours{
