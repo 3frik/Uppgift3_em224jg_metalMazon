@@ -48,6 +48,8 @@ body{
         text-decoration: none;
         color:var(--textColor);
         padding: var(--paddingSmall);
+        background-color: var(--menuBgColor);
+        text-align: center;
         display:block;
         transition: color 0.2s, background-color 0.2s;
 
@@ -91,58 +93,63 @@ body{
             transform:scale(1.2);
         }
     }
-
+    
     .urgent{
         background-color: var(--menuBgContrastColorExtreme);
     }
-
-    form{
-    padding:5vh;
-    padding-right: 5vw;
-    padding-left: 5vw;
-    background-color: var(--bgcolor2);
-    color: var(--textColor2);
-    width: 100%;
-
-    .field{
-        display: flex;
-        flex-direction: column;
-        
-        &:hover{
-            font-weight: bold;
-            input{
-                border: 2px solid black;
-            }
-        }
-    }
-
+    
     .horizontal{
+        display:flex;
         flex-direction: row;
         gap:var(--paddingSmall);
     }
-
-    *{
-        padding:10px;
-    }
     
-    button{
-        border:none;
-        background-color: var(--menuBgContrastColor);
-        color:var(--textColor);
-        transition: background-color 0.5s;
+    form{
+        padding:5vh;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        background-color: var(--bgcolor2);
+        color: var(--textColor2);
+        width: 100%;
         
-        &:hover{
-            background-color: black;
+        
+        .field{
+            display: flex;
+            flex-direction: column;
+            
+
+            &:hover{
+                font-weight: bold;
+
+                input{
+                border: 2px solid black;
+                }
+            }
+        }
+
+
+        *{
+            padding:10px;
+        }
+    
+        button{
+            border:none;
+            background-color: var(--menuBgContrastColor);
+            color:var(--textColor);
+            transition: background-color 0.5s;
+        
+            &:hover{
+                background-color: black;
+            }
+        }
+    
+        select, input, textarea {
+            border-radius: 5px;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
     }
-    
-    select, input, textarea {
-        border-radius: 5px;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-}
 }
 
 header{
@@ -190,8 +197,12 @@ header{
             right:0;
             transform: translateY(-60px);
 
-            :nth-child(6){
-                background-color: var(--menuBgContrastColorExtreme);
+            :nth-child(6) a{
+                    background-color: var(--menuBgContrastColorExtreme);
+
+                    &:hover{
+                        background-color: var(--bgcolor2);
+                    }
             }
         }
         

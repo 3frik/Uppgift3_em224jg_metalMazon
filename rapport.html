@@ -197,17 +197,82 @@
             <p>Bilderna har redigerats i GIMP, ett bildredigeringsprogram, där följande gjorts:</p>
             <ul>
                 <li>Omvandlats till format .webp</li>
-                <li>Klippts så¨att alla får samma storlek.</li>
-                <li>Anpassas till 4 format: horisontel och vertikal, stor för web grid (800px) och till mobil (600px)</li>
+                <li>Klippts så att alla får samma ratio, som hjar valts till 16:9 både för vertikala som horisontella bilder.</li>
+                <li>Anpassas till 4 format: horisontel och vertikal, stor för web grid (1200px längst) och till mobil (600px längst)</li>
             </ul>
             <!-- För VG anger du också var på din webbplats du använt dig av picture-elementet. Har du använt det på flera ställen, duplicerar du textstycket. -->
             <!-- Om du inte gjort VG-kravet, tar du bort nedanstående stycke. -->
-            <p>Picture-elementet används på sidan ... för bilden ...</p>
+            <p>Picture-elementet används på sidan catalogue för alla bilder som inte är ikoner. De anpassar bildens src till den storlek och oprientering som har bestämts optimalt för varje sida: vertikal och stor för stora skärmar, mindre och ibland horisontell för mobilskärmar.</p>
+            <p>Picture-elementet används på sidan customers för alla bilder som inte är ikoner. De anpassar bildens src till den storlek och oprientering som har bestämts optimalt för varje sida: vertikal och stor för stora skärmar, mindre och ibland horisontell för mobilskärmar.</p>
+            <p>Picture-elementet används på sidan produt för alla bilder som inte är ikoner. De anpassar bildens src till den storlek och oprientering som har bestämts optimalt för varje sida: vertikal och stor för stora skärmar, mindre och ibland horisontell för mobilskärmar.</p>
         </section>
 
         <section>
             <h2>5. Utvärdering mot kravspecifikationen</h2>
             <!-- Kopiera din kravspecifikation hit. Efter varje punkt lägger du till en kort mening som motiverar hur kravet är uppfyllt eller motiverar varför det inte är uppfyllt. -->
+            <h3>Innehåll</h3>
+            <!-- Skriv korta konkreta och mätbara krav som beskriver VAD innehållet ska bestå av. -->
+            <ul>
+                <li>Information om produkter: En catalog med minst 8 exempel som ingår namn, bild, mått, beskrivning
+                    <p>Kravet har uppfyllts i stor grad. Avvikelser har varit:
+                        1) Endast 7 bilder. Bildredigering var högt tidskrävande och från en utbildningsperspektiv följer jag tankesättet "Att visar en färdighet tre gånger är lika bra som att visa den femtio gånger". Så jag tycker jag har redan visat att jag kan hantera pictures oich img. 
+                        2) Mått har tagits bort. Bilder borde räcka för att få en idé av hur stor produkten är, eller om de visar detaljer, är produktens mått irrelevant.</p>
+                </li>
+                <li>Telefonnummer föredras som kontaktmiljö och betonas i strukturen och visuellt design. De visas minst två gånger per sida.
+                    <p>Den här krav har modiofierats starkt. Det finns telefonen i varje sida, och den är betonat, men den finns inte två gånger i alla sidor. Anledning till detta är två:
+                        1) Det har lagts enkel snabb tillgång till den genom en fast navbar i mobilversionen, och en enkelt nåbar navbar i stationära skärmar (scrolla upp var som helst och den kommer strax).
+                        2) Det visas telefonnummer uipprepade gånger i de sidor där det är mest relevant: två gånger i contact, tre i home, och 4 i urgent. 
+                    </p>
+                </li>
+                <li>En startsida med kort information om bolaget, karta, adress och öppetider.
+                    <p>Alla de element finns i home sidan.</p>
+                </li>
+                <li>En sida "om oss" med information och bilder av personalen, och bilder av företaget.
+                    <p>Det finns en kontorbild som backgrund i en hero section. Det finns bilder av fiktiva människor med dess fiktiva namn och roll</p>
+                </li>
+                <li>"Om oss" sida ingår de 20 år erfarenhet i branschen
+                    <p>UTvecklad till 30 års erfarenhet nu när jag vet att den riktiga företaget startade 1991. Dt nämns både i home och about.</p>
+                </li>
+                <li>En sida "Akut smedarbetare" betonat i navigerings menyerna
+                    <p>I navigeringsmeny är länken till urgent sida betonat med samma färg och funktion som telefonnumrets.</p>
+                </li>
+                <li>"Akut smedarbetare" sida ingår telefonnummer i minst fyra platser
+                    <p>Som beskrivit tidigare, det finns telefonnummer  i fyra platser.</p>
+                </li>
+                <li>"Akut smedarbetare" sida använder telefonnummer som break element
+                    <p>Tre av de fyra platser används som break. Ena v dem som break efter att erbjuda ringa till företaget, så den är inte bara en break.</p>
+                </li>
+                <li>"Akut smedarbetare" sida ingår en karta med bolagets position
+                    <p>Kartan finns både i urgent och home.</p>
+                </li>
+                <li>En sida "produkter och tjänster" med information om produkter (se upp) och tillgång till kontaktformulär (se i funktionskrav)
+                    <p>Det finns sidan catalogue separat från tjänster (som finns i urgent) och en sida till contact.
+                        Sidan catalogue länkar till sidan product (som just nu finns en endast, men det kan finnas fyra med exakt samma struktur fast olika bilder) som länkar till sidan contact efter en formulär för att uppskatta priset på egen hand.
+                    </p>
+                </li>
+                <li>En sida "våra kunder" där kunder kan posta och kommentera sina upplevelse med företaget.
+                    <p>I sidan cutstomers hittar manr eviews från kunder. Det finns också en formulär för att lägga sina egna recensioner. Den är inte dock anpassat för att lagra tusentals kommentärer för att den inte är en social nätverk.</p>
+                </li>
+            </ul>
+            <h3>Funktion</h3>
+            <!-- Skriv korta konkreta och mätbara krav som beskriver VAD användaren ska kunna göra. -->
+            <ul>
+                <li>En förmulär där man väljer en produkt, lägger in mått, kanske lokalisation, och man får ett pris för tjänsten
+                    <p>Den finns i product. Efter samtal med kunden har det laggs ett par konkreta frågor till.</p>
+                </li>
+                <li>I startsidan en extra länk till "akut smedarbetare" som man kommer ditekt till, utan vidare click på menyer
+                    <p>Det finns i navigations verktyg, betonat för lätt tillgång, en länk till akut tjänsgöring. Vid sidan av telefonnummer.</p>
+                </li>
+                <li>En blankett för att kontakta via inre mail som ingår beställarens namn eller företag, adress, beskrivning av ärenden och  föredrat kontaktmetod med fälte för telefonnummer eller mailadress
+                    <p>Den finns i sidan contact.</p>
+                </li>
+                <li>Bilder i information om produkter (se innehållskrav) ska kunna förstoras genom hovering
+                    <p>Den här krav har tagits bort för jag ahr itne hittat en form av förstoring som jag tyckte om (inte heller den i min tidigare sida: <a href="https://eriksminis.netlify.app/">eriks minis</a>). Det som ajg borde ha uppskattat vore en förstorat version som täcker mes av sidan men inte ändrar den originella bilden utan att den bara läggs över hela sidans innehåll</p>
+                </li>
+                <li>En formulär för att kommentera och bedöma arbetet från kunderna
+                    <p>Den finns i customers.</p>
+                </li>
+            </ul>
         </section>
         
         <section>
@@ -215,7 +280,16 @@
             <h3>- med metoden "Tänka högt" (Thinking Out Loud)</h3>
             <!-- Endast för VG. Har du inte utfört användartest, tar du bort detta avsnitt (hela section-elementet). -->
             <!-- Beskriv hur du genomförde användartestet. Ange vilka brister du upptäckte och hur du åtgärdat dem. -->
-            <p>...</p>
+            <p>Testet har körts med två inidivder:
+                1) Den ena är tidigare arbetare i Metal Mazon SL. 
+                1) Den andra är en mallanålder kvinna som råkar bo hos mig.
+            </p>
+            <p>Frågor som stäldes var:
+                1)Find out more about the blinds.
+                2)Get an estimate of the price for a door.
+                3)Find out when the company is open.
+            </p>
+
         </section>
 
         <section>
